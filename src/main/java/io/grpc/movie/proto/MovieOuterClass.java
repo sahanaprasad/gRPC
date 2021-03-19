@@ -2233,35 +2233,28 @@ public final class MovieOuterClass {
     int getYear();
 
     /**
-     * <code>int32 duration = 5;</code>
+     * <code>string duration = 5;</code>
      * @return The duration.
      */
-    int getDuration();
-
+    java.lang.String getDuration();
     /**
-     * <code>repeated string genres = 6;</code>
-     * @return A list containing the genres.
-     */
-    java.util.List<java.lang.String>
-        getGenresList();
-    /**
-     * <code>repeated string genres = 6;</code>
-     * @return The count of genres.
-     */
-    int getGenresCount();
-    /**
-     * <code>repeated string genres = 6;</code>
-     * @param index The index of the element to return.
-     * @return The genres at the given index.
-     */
-    java.lang.String getGenres(int index);
-    /**
-     * <code>repeated string genres = 6;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the genres at the given index.
+     * <code>string duration = 5;</code>
+     * @return The bytes for duration.
      */
     com.google.protobuf.ByteString
-        getGenresBytes(int index);
+        getDurationBytes();
+
+    /**
+     * <code>string genres = 6;</code>
+     * @return The genres.
+     */
+    java.lang.String getGenres();
+    /**
+     * <code>string genres = 6;</code>
+     * @return The bytes for genres.
+     */
+    com.google.protobuf.ByteString
+        getGenresBytes();
 
     /**
      * <code>string story_line = 7;</code>
@@ -2314,7 +2307,8 @@ public final class MovieOuterClass {
     private MovieDetail() {
       movieId_ = "";
       movieName_ = "";
-      genres_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      duration_ = "";
+      genres_ = "";
       storyLine_ = "";
       price_ = "";
       imageUrl_ = "";
@@ -2340,7 +2334,6 @@ public final class MovieOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2373,18 +2366,16 @@ public final class MovieOuterClass {
               year_ = input.readInt32();
               break;
             }
-            case 40: {
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              duration_ = input.readInt32();
+              duration_ = s;
               break;
             }
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                genres_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              genres_.add(s);
+
+              genres_ = s;
               break;
             }
             case 58: {
@@ -2420,9 +2411,6 @@ public final class MovieOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          genres_ = genres_.getUnmodifiableView();
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -2533,48 +2521,75 @@ public final class MovieOuterClass {
     }
 
     public static final int DURATION_FIELD_NUMBER = 5;
-    private int duration_;
+    private volatile java.lang.Object duration_;
     /**
-     * <code>int32 duration = 5;</code>
+     * <code>string duration = 5;</code>
      * @return The duration.
      */
-    public int getDuration() {
-      return duration_;
+    public java.lang.String getDuration() {
+      java.lang.Object ref = duration_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        duration_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string duration = 5;</code>
+     * @return The bytes for duration.
+     */
+    public com.google.protobuf.ByteString
+        getDurationBytes() {
+      java.lang.Object ref = duration_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        duration_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int GENRES_FIELD_NUMBER = 6;
-    private com.google.protobuf.LazyStringList genres_;
+    private volatile java.lang.Object genres_;
     /**
-     * <code>repeated string genres = 6;</code>
-     * @return A list containing the genres.
+     * <code>string genres = 6;</code>
+     * @return The genres.
      */
-    public com.google.protobuf.ProtocolStringList
-        getGenresList() {
-      return genres_;
+    public java.lang.String getGenres() {
+      java.lang.Object ref = genres_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        genres_ = s;
+        return s;
+      }
     }
     /**
-     * <code>repeated string genres = 6;</code>
-     * @return The count of genres.
-     */
-    public int getGenresCount() {
-      return genres_.size();
-    }
-    /**
-     * <code>repeated string genres = 6;</code>
-     * @param index The index of the element to return.
-     * @return The genres at the given index.
-     */
-    public java.lang.String getGenres(int index) {
-      return genres_.get(index);
-    }
-    /**
-     * <code>repeated string genres = 6;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the genres at the given index.
+     * <code>string genres = 6;</code>
+     * @return The bytes for genres.
      */
     public com.google.protobuf.ByteString
-        getGenresBytes(int index) {
-      return genres_.getByteString(index);
+        getGenresBytes() {
+      java.lang.Object ref = genres_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        genres_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int STORY_LINE_FIELD_NUMBER = 7;
@@ -2711,11 +2726,11 @@ public final class MovieOuterClass {
       if (year_ != 0) {
         output.writeInt32(4, year_);
       }
-      if (duration_ != 0) {
-        output.writeInt32(5, duration_);
+      if (!getDurationBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, duration_);
       }
-      for (int i = 0; i < genres_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, genres_.getRaw(i));
+      if (!getGenresBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, genres_);
       }
       if (!getStoryLineBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, storyLine_);
@@ -2749,17 +2764,11 @@ public final class MovieOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(4, year_);
       }
-      if (duration_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, duration_);
+      if (!getDurationBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, duration_);
       }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < genres_.size(); i++) {
-          dataSize += computeStringSizeNoTag(genres_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getGenresList().size();
+      if (!getGenresBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, genres_);
       }
       if (!getStoryLineBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, storyLine_);
@@ -2793,10 +2802,10 @@ public final class MovieOuterClass {
           != other.getRating()) return false;
       if (getYear()
           != other.getYear()) return false;
-      if (getDuration()
-          != other.getDuration()) return false;
-      if (!getGenresList()
-          .equals(other.getGenresList())) return false;
+      if (!getDuration()
+          .equals(other.getDuration())) return false;
+      if (!getGenres()
+          .equals(other.getGenres())) return false;
       if (!getStoryLine()
           .equals(other.getStoryLine())) return false;
       if (!getPrice()
@@ -2823,11 +2832,9 @@ public final class MovieOuterClass {
       hash = (37 * hash) + YEAR_FIELD_NUMBER;
       hash = (53 * hash) + getYear();
       hash = (37 * hash) + DURATION_FIELD_NUMBER;
-      hash = (53 * hash) + getDuration();
-      if (getGenresCount() > 0) {
-        hash = (37 * hash) + GENRES_FIELD_NUMBER;
-        hash = (53 * hash) + getGenresList().hashCode();
-      }
+      hash = (53 * hash) + getDuration().hashCode();
+      hash = (37 * hash) + GENRES_FIELD_NUMBER;
+      hash = (53 * hash) + getGenres().hashCode();
       hash = (37 * hash) + STORY_LINE_FIELD_NUMBER;
       hash = (53 * hash) + getStoryLine().hashCode();
       hash = (37 * hash) + PRICE_FIELD_NUMBER;
@@ -2975,10 +2982,10 @@ public final class MovieOuterClass {
 
         year_ = 0;
 
-        duration_ = 0;
+        duration_ = "";
 
-        genres_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        genres_ = "";
+
         storyLine_ = "";
 
         price_ = "";
@@ -3011,16 +3018,11 @@ public final class MovieOuterClass {
       @java.lang.Override
       public io.grpc.movie.proto.MovieOuterClass.MovieDetail buildPartial() {
         io.grpc.movie.proto.MovieOuterClass.MovieDetail result = new io.grpc.movie.proto.MovieOuterClass.MovieDetail(this);
-        int from_bitField0_ = bitField0_;
         result.movieId_ = movieId_;
         result.movieName_ = movieName_;
         result.rating_ = rating_;
         result.year_ = year_;
         result.duration_ = duration_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          genres_ = genres_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
         result.genres_ = genres_;
         result.storyLine_ = storyLine_;
         result.price_ = price_;
@@ -3087,17 +3089,12 @@ public final class MovieOuterClass {
         if (other.getYear() != 0) {
           setYear(other.getYear());
         }
-        if (other.getDuration() != 0) {
-          setDuration(other.getDuration());
+        if (!other.getDuration().isEmpty()) {
+          duration_ = other.duration_;
+          onChanged();
         }
-        if (!other.genres_.isEmpty()) {
-          if (genres_.isEmpty()) {
-            genres_ = other.genres_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureGenresIsMutable();
-            genres_.addAll(other.genres_);
-          }
+        if (!other.getGenres().isEmpty()) {
+          genres_ = other.genres_;
           onChanged();
         }
         if (!other.getStoryLine().isEmpty()) {
@@ -3140,7 +3137,6 @@ public final class MovieOuterClass {
         }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object movieId_ = "";
       /**
@@ -3354,142 +3350,154 @@ public final class MovieOuterClass {
         return this;
       }
 
-      private int duration_ ;
+      private java.lang.Object duration_ = "";
       /**
-       * <code>int32 duration = 5;</code>
+       * <code>string duration = 5;</code>
        * @return The duration.
        */
-      public int getDuration() {
-        return duration_;
+      public java.lang.String getDuration() {
+        java.lang.Object ref = duration_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          duration_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>int32 duration = 5;</code>
+       * <code>string duration = 5;</code>
+       * @return The bytes for duration.
+       */
+      public com.google.protobuf.ByteString
+          getDurationBytes() {
+        java.lang.Object ref = duration_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          duration_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string duration = 5;</code>
        * @param value The duration to set.
        * @return This builder for chaining.
        */
-      public Builder setDuration(int value) {
-        
+      public Builder setDuration(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         duration_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 duration = 5;</code>
+       * <code>string duration = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearDuration() {
         
-        duration_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.LazyStringList genres_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureGenresIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          genres_ = new com.google.protobuf.LazyStringArrayList(genres_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated string genres = 6;</code>
-       * @return A list containing the genres.
-       */
-      public com.google.protobuf.ProtocolStringList
-          getGenresList() {
-        return genres_.getUnmodifiableView();
-      }
-      /**
-       * <code>repeated string genres = 6;</code>
-       * @return The count of genres.
-       */
-      public int getGenresCount() {
-        return genres_.size();
-      }
-      /**
-       * <code>repeated string genres = 6;</code>
-       * @param index The index of the element to return.
-       * @return The genres at the given index.
-       */
-      public java.lang.String getGenres(int index) {
-        return genres_.get(index);
-      }
-      /**
-       * <code>repeated string genres = 6;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the genres at the given index.
-       */
-      public com.google.protobuf.ByteString
-          getGenresBytes(int index) {
-        return genres_.getByteString(index);
-      }
-      /**
-       * <code>repeated string genres = 6;</code>
-       * @param index The index to set the value at.
-       * @param value The genres to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGenres(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureGenresIsMutable();
-        genres_.set(index, value);
+        duration_ = getDefaultInstance().getDuration();
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string genres = 6;</code>
-       * @param value The genres to add.
+       * <code>string duration = 5;</code>
+       * @param value The bytes for duration to set.
        * @return This builder for chaining.
        */
-      public Builder addGenres(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureGenresIsMutable();
-        genres_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string genres = 6;</code>
-       * @param values The genres to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllGenres(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureGenresIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, genres_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string genres = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGenres() {
-        genres_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string genres = 6;</code>
-       * @param value The bytes of the genres to add.
-       * @return This builder for chaining.
-       */
-      public Builder addGenresBytes(
+      public Builder setDurationBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        ensureGenresIsMutable();
-        genres_.add(value);
+        
+        duration_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object genres_ = "";
+      /**
+       * <code>string genres = 6;</code>
+       * @return The genres.
+       */
+      public java.lang.String getGenres() {
+        java.lang.Object ref = genres_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          genres_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string genres = 6;</code>
+       * @return The bytes for genres.
+       */
+      public com.google.protobuf.ByteString
+          getGenresBytes() {
+        java.lang.Object ref = genres_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          genres_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string genres = 6;</code>
+       * @param value The genres to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGenres(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        genres_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string genres = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGenres() {
+        
+        genres_ = getDefaultInstance().getGenres();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string genres = 6;</code>
+       * @param value The bytes for genres to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGenresBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        genres_ = value;
         onChanged();
         return this;
       }
@@ -6434,7 +6442,7 @@ public final class MovieOuterClass {
       "ovie_detail\030\002 \003(\0132\014.MovieDetail\"\251\001\n\013Movi" +
       "eDetail\022\020\n\010movie_id\030\001 \001(\t\022\022\n\nmovie_name\030" +
       "\002 \001(\t\022\016\n\006rating\030\003 \001(\005\022\014\n\004year\030\004 \001(\005\022\020\n\010d" +
-      "uration\030\005 \001(\005\022\016\n\006genres\030\006 \003(\t\022\022\n\nstory_l" +
+      "uration\030\005 \001(\t\022\016\n\006genres\030\006 \001(\t\022\022\n\nstory_l" +
       "ine\030\007 \001(\t\022\r\n\005price\030\010 \001(\t\022\021\n\timage_url\030\t " +
       "\001(\t\"U\n\021BookTicketRequest\022\020\n\010movie_id\030\001 \001" +
       "(\t\022\023\n\013coupon_code\030\002 \001(\t\022\031\n\021number_of_tic" +

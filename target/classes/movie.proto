@@ -23,8 +23,8 @@ message MovieDetail {
     string movie_name = 2;
     int32 rating=3;
     int32 year = 4;
-    int32 duration = 5;
-    repeated string genres = 6;
+    string duration = 5;
+    string genres = 6;
     string story_line = 7;
     string price = 8;
     string image_url = 9;

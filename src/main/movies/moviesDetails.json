@@ -1,12 +1,12 @@
 {
   "1" : {
     "movieName" : "EndGame",
-    "rating" : 9,
+    "rating" : 4,
     "year" : 2019,
-    "duration" : 3,
-    "genres" : ["Action","Adventure","Drama"],
+    "duration" : "3h",
+    "genres" : "Adventure",
     "story_line" : "Iron Man Dies",
-    "price" : "₹ 550",
+    "price" : "₹550",
     "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
   },
   "2": {
@@ -39,6 +39,8 @@
     "price" : "₹ 550",
     "image_url" : ""
   },
+  "Coupons": ["MOV1", "HNY2021", "IRM21"]
+
 
 
 }

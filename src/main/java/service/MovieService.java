@@ -17,6 +17,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -54,16 +55,18 @@ public class MovieService extends MovieGrpc.MovieImplBase {
       detail = ((Map)movieList.get(request.getMovieId().toString()));
       System.out.println("Movie name : "+detail.get("movieName"));
 
-      movieDetail.setDuration(((Long) detail.get("duration")).intValue())
+      List<String> coupons = (List<String>) detail.get("Coupons");
+      System.out.println(coupons);
+
+      movieDetail.setDuration((String) detail.get("duration"))
               .setMovieId(request.getMovieId())
               .setRating(((Long) detail.get("rating")).intValue())
               .setYear(((Long) detail.get("year")).intValue())
-              .addAllGenres((Iterable<String>) detail.get("genres"))
+              .setGenres((String) detail.get("genres"))
               .setStoryLine((String) detail.get("story_line"))
               .setPrice((String) detail.get("price"))
               .setMovieName((String) detail.get("movieName"))
               .setImageUrl((String) detail.get("image_url"));
-     // bookTicketResponse.setBarCodeString("Sucess").setErrorHandlingDetails(errResponse).setMovieDetails(movieDetail);
       name = (String) detail.get("movieName");
       result = "Success";
       bookTicketResponse.setBarCodeString(result).setMovieDetails(movieDetail);
@@ -76,6 +79,7 @@ public class MovieService extends MovieGrpc.MovieImplBase {
       e.printStackTrace();
     }
     catch (Exception e) {
+      e.printStackTrace();
       MovieOuterClass.ErroHandlingDetail.Builder errResponse = MovieOuterClass.ErroHandlingDetail.newBuilder();
 
       errTitle = "NOT FOUND";
