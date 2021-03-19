@@ -1,0 +1,48 @@
+syntax = "proto3";
+option java_package = "io.grpc.movie.proto";
+
+
+service Movie {
+    rpc GetMovieListing(Empty) returns (MovieListResponse);
+    rpc BookTicket (BookTicketRequest) returns (BookTicketResponse);
+}
+
+message Empty {
+
+}
+message MovieListResponse {
+    repeated MoviesType movies_list = 1;
+}
+message MoviesType {
+    // now in cinemas. coming soon ,top rated categories
+    string movie_category = 1;
+    repeated MovieDetail movie_detail = 2;
+}
+message MovieDetail {
+    string movie_id = 1;
+    string movie_name = 2;
+    int32 rating=3;
+    int32 year = 4;
+    int32 duration = 5;
+    repeated string genres = 6;
+    string story_line = 7;
+    string price = 8;
+    string image_url = 9;
+}
+
+message BookTicketRequest {
+    string movie_id = 1;
+    string coupon_code = 2;
+    int32 number_of_tickets = 3;
+}
+message BookTicketResponse{
+    ErroHandlingDetail error_handling_details = 1;
+    MovieDetail movie_details = 2;
+    string bar_code_string = 3;
+}
+message ErroHandlingDetail{
+    string title = 1;
+    string description = 2;
+    string image_url  = 3;
+}
+
