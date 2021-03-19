@@ -1,23 +1,23 @@
 {
   "1" : {
-    "movieName" : "EndGame1",
+    "movieName" : "EndGame",
     "rating" : 4,
     "year" : 2019,
     "duration" : "3h",
-    "genres" : "Adventure",
-    "story_line" : "Iron Man Dies",
+    "genres" : "Action , Sci-fi",
+    "story_line" : "After Thanos, an intergalactic warlord, disintegrates half of the universe, the Avengers must reunite and assemble again to reinvigorate their trounced allies and restore balance.",
     "price" : "₹550",
-    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
+    "image_url" : "https://i.imgur.com/YKVl9JBl.jpg"
   },
   "2": {
-    "movieName" : "InfinityWar2",
+    "movieName" : "InfinityWar",
     "rating" : 4,
-    "year" : 2019,
-    "duration" : "3h",
-    "genres" : "Adventure",
-    "story_line" : "Iron Man Dies",
+    "year" : 2018,
+    "duration" : "2h 40m",
+    "genres" : "Action/Sci-fi",
+    "story_line" : "The Avengers must stop Thanos, an intergalactic warlord, from getting his hands on all the infinity stones. However, Thanos is prepared to go to any lengths to carry out his insane plan.",
     "price" : "₹550",
-    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
+    "image_url" : ""
   },
   "3": {
     "movieName" : "EndGame3",
@@ -150,7 +150,4 @@
     "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
   },
   "Coupons": ["MOV1", "HNY2021", "IRM21"]
-
-
-
 }

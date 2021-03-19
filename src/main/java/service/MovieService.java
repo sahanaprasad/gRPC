@@ -151,18 +151,31 @@ public class MovieService extends MovieGrpc.MovieImplBase {
 //      System.out.println("Movie name : "+detail.get("movieName"));
 
 
-            movieDetail.setDuration((String) detail.get("duration"))
-                    .setMovieId(request.getMovieId())
-                    .setRating(((Long) detail.get("rating")).intValue())
-                    .setYear(((Long) detail.get("year")).intValue())
-                    .setGenres((String) detail.get("genres"))
-                    .setStoryLine((String) detail.get("story_line"))
-                    .setPrice((String) detail.get("price"))
-                    .setMovieName((String) detail.get("movieName"))
-                    .setImageUrl((String) detail.get("image_url"));
-            name = (String) detail.get("movieName");
-            result = "Success";
-            bookTicketResponse.setBarCodeString(result).setMovieDetails(movieDetail);
+            List couponsList = (List) movieList.get("Coupons");
+            System.out.println("Coupons : " + couponsList);
+            if (couponsList.contains(request.getCouponCode())) {
+                movieDetail.setDuration((String) detail.get("duration"))
+                        .setMovieId(request.getMovieId())
+                        .setRating(((Long) detail.get("rating")).intValue())
+                        .setYear(((Long) detail.get("year")).intValue())
+                        .setGenres((String) detail.get("genres"))
+                        .setStoryLine((String) detail.get("story_line"))
+                        .setPrice((String) detail.get("price"))
+                        .setMovieName((String) detail.get("movieName"))
+                        .setImageUrl((String) detail.get("image_url"));
+                name = (String) detail.get("movieName");
+                result = "Success";
+                bookTicketResponse.setBarCodeString(result).setMovieDetails(movieDetail);
+            } else {
+                MovieOuterClass.ErroHandlingDetail.Builder errResponse = MovieOuterClass.ErroHandlingDetail.newBuilder();
+
+                errTitle = "NOT FOUND";
+                errDescription = "Invalid Coupon";
+                errImage = "wertyui";
+                errResponse.setTitle(errTitle).setDescription(errDescription).setImageUrl(errImage);
+                result = "Failed";
+                bookTicketResponse.setBarCodeString(result).setErrorHandlingDetails(errResponse);
+            }
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -173,18 +186,14 @@ public class MovieService extends MovieGrpc.MovieImplBase {
         } catch (Exception e) {
             e.printStackTrace();
             MovieOuterClass.ErroHandlingDetail.Builder errResponse = MovieOuterClass.ErroHandlingDetail.newBuilder();
-
             errTitle = "NOT FOUND";
             errDescription = "Movie ID does not exist";
             errImage = "wertyui";
             errResponse.setTitle(errTitle).setDescription(errDescription).setImageUrl(errImage);
             result = "Failed";
             bookTicketResponse.setBarCodeString(result).setErrorHandlingDetails(errResponse);
-
         }
-
         //MovieOuterClass.Gen.Builder movieDetail = MovieOuterClass.MovieDetail.newBuilder();
-
         responseObserver.onNext(bookTicketResponse.build());
         responseObserver.onCompleted();
     }
