@@ -10,144 +10,144 @@
     "image_url" : "https://i.imgur.com/YKVl9JBl.jpg"
   },
   "2": {
-    "movieName" : "InfinityWar",
+    "movieName" : "Zack Snyder's Justice League",
+    "rating" : 4,
+    "year" : 2021,
+    "duration" : "4h 2m",
+    "genres" : "Action, Sci-fi",
+    "story_line" : "Zack Snyder's definitive director's cut of Justice League. Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions.",
+    "price" : "₹650",
+    "image_url" : "https://images.indianexpress.com/2021/03/zack-snyder-s-justice-league-poster-1200.jpeg"
+  },
+  "3": {
+    "movieName" : "Love Story",
+    "rating" : 4,
+    "year" : 2021,
+    "duration" : "2hr 28min",
+    "genres" : "Romance",
+    "story_line" : "Love Story is a romantic entertainer movie directed by Sekhar Kammula",
+    "price" : "₹450",
+    "image_url" : "https://i.imgur.com/zdul4oz.png",
+  },
+  "4": {
+    "movieName" : "Drishyam 2",
+    "rating" : 4,
+    "year" : 2019,
+    "duration" : "2hr 20min",
+    "genres" : "Thriller",
+    "story_line" : "A gripping tale of an investigation and a family which is threatened by it. Will Georgekutty be able to protect his family this time?",
+    "price" : "₹500",
+    "image_url" : "https://i.imgur.com/t5WujCM.png"
+  },
+  "5": {
+    "movieName" : "Free Guy",
+    "rating" : 4,
+    "year" : 2019,
+    "duration" : "2hr 20min",
+    "genres" : "Action",
+    "story_line" : "A bank teller discovers that he's actually an NPC inside a brutal, open world video game.",
+    "price" : "₹550",
+    "image_url" : "https://i.imgur.com/qWVNUHK.png"
+  },
+  "6" : {
+    "movieName" : "Godzilla vs. Kong",
+    "rating" : 5,
+    "year" : 2021,
+    "duration" : "2h 52m",
+    "genres" : "Sci-fi/Action",
+    "story_line" : "Fearsome monsters Godzilla and King Kong square off in an epic battle for the ages, while humanity looks to wipe out both of the creatures and take back the planet once and for all.",
+    "price" : "₹650",
+    "image_url" : "https://static2.srcdn.com/wordpress/wp-content/uploads/2020/10/Godzilla-king-of-the-monsters-Kong-skull-island-Godzilla-vs-king-kong.jpg"
+  },
+  "7": {
+    "movieName" : "KGF Chapter 2",
+    "rating" : 5,
+    "year" : 2021,
+    "duration" : "2h 51m",
+    "genres" : "Action, Drama",
+    "story_line" : "K.G.F: Chapter 2 is an upcoming Indian Kannada-language period action film written and directed by Prashanth Neel and produced by Vijay Kiragandur under the banner Hombale Films. The second installment of the two-part series, it is a sequel to the 2018 film",
+    "price" : "₹450",
+    "image_url" : "https://i.ytimg.com/vi/q6uEYDcch3w/maxresdefault.jpg"
+  },
+  "8": {
+    "movieName" : "Avengers: Infinity War",
     "rating" : 4,
     "year" : 2018,
     "duration" : "2h 40m",
-    "genres" : "Action/Sci-fi",
-    "story_line" : "The Avengers must stop Thanos, an intergalactic warlord, from getting his hands on all the infinity stones. However, Thanos is prepared to go to any lengths to carry out his insane plan.",
-    "price" : "₹550",
-    "image_url" : ""
-  },
-  "3": {
-    "movieName" : "EndGame3",
-    "rating" : 4,
-    "year" : 2019,
-    "duration" : "3h",
-    "genres" : "Adventure",
+    "genres" : "Action/Sci-fi ",
     "story_line" : "Iron Man Dies",
     "price" : "₹550",
-    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
-  },
-  "4": {
-    "movieName" : "EndGame4",
-    "rating" : 4,
-    "year" : 2019,
-    "duration" : "3h",
-    "genres" : "Adventure",
-    "story_line" : "Iron Man Dies",
-    "price" : "₹550",
-    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
-  },
-  "5": {
-    "movieName" : "EndGame5",
-    "rating" : 4,
-    "year" : 2019,
-    "duration" : "3h",
-    "genres" : "Adventure",
-    "story_line" : "Iron Man Dies",
-    "price" : "₹550",
-    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
-  },
-  "6" : {
-    "movieName" : "EndGame6",
-    "rating" : 4,
-    "year" : 2019,
-    "duration" : "3h",
-    "genres" : "Adventure",
-    "story_line" : "Iron Man Dies",
-    "price" : "₹550",
-    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
-  },
-  "7": {
-    "movieName" : "InfinityWar7",
-    "rating" : 4,
-    "year" : 2019,
-    "duration" : "3h",
-    "genres" : "Adventure",
-    "story_line" : "Iron Man Dies",
-    "price" : "₹550",
-    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
-  },
-  "8": {
-    "movieName" : "EndGame8",
-    "rating" : 4,
-    "year" : 2019,
-    "duration" : "3h",
-    "genres" : "Adventure",
-    "story_line" : "Iron Man Dies",
-    "price" : "₹550",
-    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
+    "image_url" : "https://i.imgur.com/UcjEhPsl.png"
   },
   "9": {
-    "movieName" : "EndGam9",
-    "rating" : 4,
-    "year" : 2019,
-    "duration" : "3h",
-    "genres" : "Adventure",
-    "story_line" : "Iron Man Dies",
-    "price" : "₹550",
-    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
+    "movieName" : "The Unholy",
+    "rating" : 3,
+    "year" : 2021,
+    "duration" : "2h",
+    "genres" : "Horror",
+    "story_line" : "A hearing-impaired girl is visited by the Virgin Mary and can suddenly hear, speak, and heal the sick. As people flock to witness her miracles, terrifying events unfold.",
+    "price" : "₹450",
+    "image_url" : "https://i.imgur.com/gy5N5Bc.png"
   },
   "10": {
-    "movieName" : "EndGame10",
-    "rating" : 4,
-    "year" : 2019,
+    "movieName" : "Gangubai Kathiawadi",
+    "rating" : 5,
+    "year" : 2021,
     "duration" : "3h",
-    "genres" : "Adventure",
-    "story_line" : "Iron Man Dies",
+    "genres" : "Mafia",
+    "story_line" : "Gangubai Kathiawadi film is loosely based on a true story, on the book Mafia Queens of Mumbai written by S. Hussain Zaidi. The film that depicts the rise of a simple girl from Kathiawad who had no choice but to embrace the ways of destiny and swing it in her favour.",
     "price" : "₹550",
-    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
+    "image_url" : "https://i.imgur.com/0yOyPnBl.png"
   },
   "11" : {
-    "movieName" : "EndGame11",
-    "rating" : 4,
-    "year" : 2019,
-    "duration" : "3h",
-    "genres" : "Adventure",
-    "story_line" : "Iron Man Dies",
-    "price" : "₹550",
-    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
+    "movieName" : "The Shawshank Redemption ",
+    "rating" : 5,
+    "year" : 1994,
+    "duration" : "2h 22m",
+    "genres" : "Drama, Crime",
+    "story_line" : "Andy Dufresne, a successful banker, is arrested for the murders of his wife and her lover, and is sentenced to life imprisonment at the Shawshank prison. He becomes the most unconventional prisoner.",
+    "price" : "₹650",
+    "image_url" : "https://i.imgur.com/1GEKLP1l.png"
   },
   "12": {
-    "movieName" : "InfinityWar12",
+    "movieName" : "The Falcon and the Winter Soldier",
     "rating" : 4,
-    "year" : 2019,
+    "year" : 2021,
     "duration" : "3h",
-    "genres" : "Adventure",
-    "story_line" : "Iron Man Dies",
+    "genres" : "Action fiction",
+    "story_line" : "Falcon and the Winter Soldier are a mismatched duo who team up for a global adventure that will test their survival skills -- as well as their patience.",
     "price" : "₹550",
-    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
+    "image_url" : "https://i.imgur.com/21xF8x4l.png"
   },
   "13": {
-    "movieName" : "EndGame13",
-    "rating" : 4,
-    "year" : 2019,
-    "duration" : "3h",
-    "genres" : "Adventure",
-    "story_line" : "Iron Man Dies",
+    "movieName" : "The Dig",
+    "rating" : 3,
+    "year" : 2021,
+    "duration" : "1hr 42min",
+    "genres" : "Biography,Drama,History",
+    "story_line" : "An archaeologist embarks on the historically important excavation of Sutton Hoo in 1938.",
     "price" : "₹550",
-    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
+    "image_url" : "https://i.imgur.com/CNIxIQV.png"
   },
   "14": {
-    "movieName" : "EndGame14",
+    "movieName" : "Yes Day",
     "rating" : 4,
-    "year" : 2019,
-    "duration" : "3h",
-    "genres" : "Adventure",
-    "story_line" : "Iron Man Dies",
+    "year" : 2021,
+    "duration" : "1hr 26min",
+    "genres" : "Comedy",
+    "story_line" : "A mom and dad who usually say no decide to say yes to their kids' wildest requests with a few ground rules on a whirlwind day of fun and adventure.",
     "price" : "₹550",
-    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
+    "image_url" : "https://i.imgur.com/ZaHNNNK.png"
   },
   "15": {
-    "movieName" : "EndGame15",
-    "rating" : 4,
-    "year" : 2019,
-    "duration" : "3h",
-    "genres" : "Adventure",
-    "story_line" : "Iron Man Dies",
+    "movieName" : "The Little Things",
+    "rating" : 3,
+    "year" : 2021,
+    "duration" : "2hr 8min",
+    "genres" : "Crime",
+    "story_line" : "Kern County Deputy Sheriff Joe Deacon is sent to Los Angeles for what should have been a quick evidence-gathering assignment. Instead, he becomes embroiled in the search for a serial killer who is terrorizing the city.",
     "price" : "₹550",
-    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
+    "image_url" : "https://i.imgur.com/QQhc4We.png"
   },
-  "Coupons": ["MOV1", "HNY2021", "IRM21"]
+  "Coupons": ["MOV1", "HNY2021", "IRM21","MOV2","MOV3"]
 }

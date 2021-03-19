@@ -4,7 +4,6 @@ import io.grpc.movie.proto.MovieGrpc;
 import io.grpc.movie.proto.MovieOuterClass;
 import io.grpc.stub.StreamObserver;
 
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -149,7 +148,6 @@ public class MovieService extends MovieGrpc.MovieImplBase {
 
             detail = ((Map) movieList.get(request.getMovieId().toString()));
 //      System.out.println("Movie name : "+detail.get("movieName"));
-
 
             List couponsList = (List) movieList.get("Coupons");
             System.out.println("Coupons : " + couponsList);
