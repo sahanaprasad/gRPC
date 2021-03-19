@@ -35,7 +35,6 @@ public class MovieService extends MovieGrpc.MovieImplBase {
   public void bookTicket(MovieOuterClass.BookTicketRequest request, StreamObserver<MovieOuterClass.BookTicketResponse> responseObserver) {
     String id =request.getMovieId();
     MovieOuterClass.BookTicketResponse.Builder bookTicketResponse = MovieOuterClass.BookTicketResponse.newBuilder();
-    MovieOuterClass.ErroHandlingDetail.Builder errResponse = MovieOuterClass.ErroHandlingDetail.newBuilder();
     MovieOuterClass.MovieDetail.Builder movieDetail = MovieOuterClass.MovieDetail.newBuilder();
 
     String genre = new String();
@@ -67,6 +66,8 @@ public class MovieService extends MovieGrpc.MovieImplBase {
      // bookTicketResponse.setBarCodeString("Sucess").setErrorHandlingDetails(errResponse).setMovieDetails(movieDetail);
       name = (String) detail.get("movieName");
       result = "Success";
+      bookTicketResponse.setBarCodeString(result).setMovieDetails(movieDetail);
+
     }catch (FileNotFoundException e) {
       e.printStackTrace();
     } catch (IOException e) {
@@ -75,14 +76,17 @@ public class MovieService extends MovieGrpc.MovieImplBase {
       e.printStackTrace();
     }
     catch (Exception e) {
+      MovieOuterClass.ErroHandlingDetail.Builder errResponse = MovieOuterClass.ErroHandlingDetail.newBuilder();
+
       errTitle = "NOT FOUND";
       errDescription = "Movie ID does not exist";
       errImage = "wertyui";
       errResponse.setTitle(errTitle).setDescription(errDescription).setImageUrl(errImage);
       result = "Failed";
+      bookTicketResponse.setBarCodeString(result).setErrorHandlingDetails(errResponse);
+
     }
 
-    bookTicketResponse.setBarCodeString(result).setErrorHandlingDetails(errResponse).setMovieDetails(movieDetail);
     //MovieOuterClass.Gen.Builder movieDetail = MovieOuterClass.MovieDetail.newBuilder();
 
     responseObserver.onNext(bookTicketResponse.build());
