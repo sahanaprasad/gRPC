@@ -1,6 +1,6 @@
 {
   "1" : {
-    "movieName" : "EndGame",
+    "movieName" : "EndGame1",
     "rating" : 4,
     "year" : 2019,
     "duration" : "3h",
@@ -10,7 +10,7 @@
     "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
   },
   "2": {
-    "movieName" : "InfinityWar",
+    "movieName" : "InfinityWar2",
     "rating" : 4,
     "year" : 2019,
     "duration" : "3h",
@@ -30,7 +30,7 @@
     "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
   },
   "4": {
-    "movieName" : "EndGame5",
+    "movieName" : "EndGame4",
     "rating" : 4,
     "year" : 2019,
     "duration" : "3h",
@@ -40,7 +40,107 @@
     "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
   },
   "5": {
-    "movieName" : "EndGame7",
+    "movieName" : "EndGame5",
+    "rating" : 4,
+    "year" : 2019,
+    "duration" : "3h",
+    "genres" : "Adventure",
+    "story_line" : "Iron Man Dies",
+    "price" : "₹550",
+    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
+  },
+  "6" : {
+    "movieName" : "EndGame6",
+    "rating" : 4,
+    "year" : 2019,
+    "duration" : "3h",
+    "genres" : "Adventure",
+    "story_line" : "Iron Man Dies",
+    "price" : "₹550",
+    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
+  },
+  "7": {
+    "movieName" : "InfinityWar7",
+    "rating" : 4,
+    "year" : 2019,
+    "duration" : "3h",
+    "genres" : "Adventure",
+    "story_line" : "Iron Man Dies",
+    "price" : "₹550",
+    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
+  },
+  "8": {
+    "movieName" : "EndGame8",
+    "rating" : 4,
+    "year" : 2019,
+    "duration" : "3h",
+    "genres" : "Adventure",
+    "story_line" : "Iron Man Dies",
+    "price" : "₹550",
+    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
+  },
+  "9": {
+    "movieName" : "EndGam9",
+    "rating" : 4,
+    "year" : 2019,
+    "duration" : "3h",
+    "genres" : "Adventure",
+    "story_line" : "Iron Man Dies",
+    "price" : "₹550",
+    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
+  },
+  "10": {
+    "movieName" : "EndGame10",
+    "rating" : 4,
+    "year" : 2019,
+    "duration" : "3h",
+    "genres" : "Adventure",
+    "story_line" : "Iron Man Dies",
+    "price" : "₹550",
+    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
+  },
+  "11" : {
+    "movieName" : "EndGame11",
+    "rating" : 4,
+    "year" : 2019,
+    "duration" : "3h",
+    "genres" : "Adventure",
+    "story_line" : "Iron Man Dies",
+    "price" : "₹550",
+    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
+  },
+  "12": {
+    "movieName" : "InfinityWar12",
+    "rating" : 4,
+    "year" : 2019,
+    "duration" : "3h",
+    "genres" : "Adventure",
+    "story_line" : "Iron Man Dies",
+    "price" : "₹550",
+    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
+  },
+  "13": {
+    "movieName" : "EndGame13",
+    "rating" : 4,
+    "year" : 2019,
+    "duration" : "3h",
+    "genres" : "Adventure",
+    "story_line" : "Iron Man Dies",
+    "price" : "₹550",
+    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
+  },
+  "14": {
+    "movieName" : "EndGame14",
+    "rating" : 4,
+    "year" : 2019,
+    "duration" : "3h",
+    "genres" : "Adventure",
+    "story_line" : "Iron Man Dies",
+    "price" : "₹550",
+    "image_url" : "https://www.imdb.com/title/tt4154796/mediaviewer/rm2775147008?ref_=tt_ov_i"
+  },
+  "15": {
+    "movieName" : "EndGame15",
     "rating" : 4,
     "year" : 2019,
     "duration" : "3h",

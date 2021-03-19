@@ -25,18 +25,24 @@ public class MovieService extends MovieGrpc.MovieImplBase {
 
     @Override
     public void getMovieListing(MovieOuterClass.Empty request, StreamObserver<MovieOuterClass.MovieListResponse> responseObserver) {
+
         MovieOuterClass.MovieListResponse.Builder response = MovieOuterClass.MovieListResponse.newBuilder();
         MovieOuterClass.MoviesType.Builder topRated = MovieOuterClass.MoviesType.newBuilder();
+        MovieOuterClass.MoviesType.Builder upcoming = MovieOuterClass.MoviesType.newBuilder();
+        MovieOuterClass.MoviesType.Builder nowInCinema = MovieOuterClass.MoviesType.newBuilder();
         MovieOuterClass.MovieDetail.Builder detailMovie = MovieOuterClass.MovieDetail.newBuilder();
         Map detail;
-        for (int i = 0; i < 5; i++) {
+        topRated.setMovieCategory("Top Rated");
+        upcoming.setMovieCategory("Coming Soon");
+        nowInCinema.setMovieCategory("Now in Cinemas");
+
+        for (int i = 1; i <= 5; i++) {
             try {
                 FileReader reader = new FileReader("/Users/shreyakishore/Documents/gRPC/src/main/movies/moviesDetails.json");
 //      FileReader reader = new FileReader("/Users/sahanaprasad/Desktop/movieRpc/src/main/movies/moviesDetails.json");
                 Object obj = jsonParser.parse(reader);
                 JSONObject movieList = (JSONObject) obj;
                 detail = ((Map) movieList.get(String.valueOf(i)));
-
 
                 detailMovie.setDuration((String) detail.get("duration")).setMovieId(String.valueOf(i))
                         .setRating(((Long) detail.get("rating")).intValue())
@@ -46,9 +52,7 @@ public class MovieService extends MovieGrpc.MovieImplBase {
                         .setPrice((String) detail.get("price"))
                         .setMovieName((String) detail.get("movieName"))
                         .setImageUrl((String) detail.get("image_url"));
-
                 topRated.addMovieDetail(detailMovie);
-
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {
@@ -59,10 +63,65 @@ public class MovieService extends MovieGrpc.MovieImplBase {
                 e.printStackTrace();
             }
         }
-        System.out.println("topRated : "+topRated);
 
-        topRated.setMovieCategory("TopRated");
+        for (int i = 6; i <= 10; i++) {
+            try {
+                FileReader reader = new FileReader("/Users/shreyakishore/Documents/gRPC/src/main/movies/moviesDetails.json");
+//      FileReader reader = new FileReader("/Users/sahanaprasad/Desktop/movieRpc/src/main/movies/moviesDetails.json");
+                Object obj = jsonParser.parse(reader);
+                JSONObject movieList = (JSONObject) obj;
+                detail = ((Map) movieList.get(String.valueOf(i)));
+
+                detailMovie.setDuration((String) detail.get("duration")).setMovieId(String.valueOf(i))
+                        .setRating(((Long) detail.get("rating")).intValue())
+                        .setYear(((Long) detail.get("year")).intValue())
+                        .setGenres((String) detail.get("genres"))
+                        .setStoryLine((String) detail.get("story_line"))
+                        .setPrice((String) detail.get("price"))
+                        .setMovieName((String) detail.get("movieName"))
+                        .setImageUrl((String) detail.get("image_url"));
+                upcoming.addMovieDetail(detailMovie);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ParseException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        for (int i = 11; i <= 15; i++) {
+            try {
+                FileReader reader = new FileReader("/Users/shreyakishore/Documents/gRPC/src/main/movies/moviesDetails.json");
+//      FileReader reader = new FileReader("/Users/sahanaprasad/Desktop/movieRpc/src/main/movies/moviesDetails.json");
+                Object obj = jsonParser.parse(reader);
+                JSONObject movieList = (JSONObject) obj;
+                detail = ((Map) movieList.get(String.valueOf(i)));
+
+                detailMovie.setDuration((String) detail.get("duration")).setMovieId(String.valueOf(i))
+                        .setRating(((Long) detail.get("rating")).intValue())
+                        .setYear(((Long) detail.get("year")).intValue())
+                        .setGenres((String) detail.get("genres"))
+                        .setStoryLine((String) detail.get("story_line"))
+                        .setPrice((String) detail.get("price"))
+                        .setMovieName((String) detail.get("movieName"))
+                        .setImageUrl((String) detail.get("image_url"));
+                nowInCinema.addMovieDetail(detailMovie);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ParseException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
         response.addMoviesList(topRated);
+        response.addMoviesList(nowInCinema);
+        response.addMoviesList(upcoming);
         responseObserver.onNext(response.build());
         responseObserver.onCompleted();
     }
