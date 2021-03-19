@@ -5,8 +5,6 @@ import io.grpc.movie.proto.MovieOuterClass;
 import io.grpc.stub.StreamObserver;
 
 
-
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -23,77 +21,112 @@ import java.util.Map;
 
 public class MovieService extends MovieGrpc.MovieImplBase {
 
-  JSONParser jsonParser = new JSONParser();
-  @Override
-  public void getMovieListing(MovieOuterClass.Empty request, StreamObserver<MovieOuterClass.MovieListResponse> responseObserver) {
-    MovieOuterClass.MovieListResponse.Builder response = MovieOuterClass.MovieListResponse.newBuilder();
-//    response.setMoviesList()
+    JSONParser jsonParser = new JSONParser();
+
+    @Override
+    public void getMovieListing(MovieOuterClass.Empty request, StreamObserver<MovieOuterClass.MovieListResponse> responseObserver) {
+        MovieOuterClass.MovieListResponse.Builder response = MovieOuterClass.MovieListResponse.newBuilder();
+        MovieOuterClass.MoviesType.Builder topRated = MovieOuterClass.MoviesType.newBuilder();
+        MovieOuterClass.MovieDetail.Builder detailMovie = MovieOuterClass.MovieDetail.newBuilder();
+        Map detail;
+        for (int i = 0; i < 5; i++) {
+            try {
+                FileReader reader = new FileReader("/Users/shreyakishore/Documents/gRPC/src/main/movies/moviesDetails.json");
+//      FileReader reader = new FileReader("/Users/sahanaprasad/Desktop/movieRpc/src/main/movies/moviesDetails.json");
+                Object obj = jsonParser.parse(reader);
+                JSONObject movieList = (JSONObject) obj;
+                detail = ((Map) movieList.get(String.valueOf(i)));
 
 
-  }
+                detailMovie.setDuration((String) detail.get("duration")).setMovieId(String.valueOf(i))
+                        .setRating(((Long) detail.get("rating")).intValue())
+                        .setYear(((Long) detail.get("year")).intValue())
+                        .setGenres((String) detail.get("genres"))
+                        .setStoryLine((String) detail.get("story_line"))
+                        .setPrice((String) detail.get("price"))
+                        .setMovieName((String) detail.get("movieName"))
+                        .setImageUrl((String) detail.get("image_url"));
 
-  @Override
-  public void bookTicket(MovieOuterClass.BookTicketRequest request, StreamObserver<MovieOuterClass.BookTicketResponse> responseObserver) {
-    String id =request.getMovieId();
-    MovieOuterClass.BookTicketResponse.Builder bookTicketResponse = MovieOuterClass.BookTicketResponse.newBuilder();
-    MovieOuterClass.MovieDetail.Builder movieDetail = MovieOuterClass.MovieDetail.newBuilder();
+                topRated.addMovieDetail(detailMovie);
 
-    String genre = new String();
-    List<String> genre1 = new ArrayList<>();
-    genre1.add("RomCom");
-    String name = "";
-    String errTitle = "";
-    String errDescription = "";
-    String errImage = "";
-    String result = "";
-    Map detail;
-    try{
-      FileReader reader = new FileReader("/Users/sahanaprasad/Desktop/movieRpc/src/main/movies/moviesDetails.json");
-      Object obj = jsonParser.parse(reader);
-      JSONObject movieList = (JSONObject) obj;
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ParseException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("topRated : "+topRated);
 
-      detail = ((Map)movieList.get(request.getMovieId().toString()));
-      System.out.println("Movie name : "+detail.get("movieName"));
-
-      List<String> coupons = (List<String>) detail.get("Coupons");
-      System.out.println(coupons);
-
-      movieDetail.setDuration((String) detail.get("duration"))
-              .setMovieId(request.getMovieId())
-              .setRating(((Long) detail.get("rating")).intValue())
-              .setYear(((Long) detail.get("year")).intValue())
-              .setGenres((String) detail.get("genres"))
-              .setStoryLine((String) detail.get("story_line"))
-              .setPrice((String) detail.get("price"))
-              .setMovieName((String) detail.get("movieName"))
-              .setImageUrl((String) detail.get("image_url"));
-      name = (String) detail.get("movieName");
-      result = "Success";
-      bookTicketResponse.setBarCodeString(result).setMovieDetails(movieDetail);
-
-    }catch (FileNotFoundException e) {
-      e.printStackTrace();
-    } catch (IOException e) {
-      e.printStackTrace();
-    } catch (ParseException e) {
-      e.printStackTrace();
-    }
-    catch (Exception e) {
-      e.printStackTrace();
-      MovieOuterClass.ErroHandlingDetail.Builder errResponse = MovieOuterClass.ErroHandlingDetail.newBuilder();
-
-      errTitle = "NOT FOUND";
-      errDescription = "Movie ID does not exist";
-      errImage = "wertyui";
-      errResponse.setTitle(errTitle).setDescription(errDescription).setImageUrl(errImage);
-      result = "Failed";
-      bookTicketResponse.setBarCodeString(result).setErrorHandlingDetails(errResponse);
-
+        topRated.setMovieCategory("TopRated");
+        response.addMoviesList(topRated);
+        responseObserver.onNext(response.build());
+        responseObserver.onCompleted();
     }
 
-    //MovieOuterClass.Gen.Builder movieDetail = MovieOuterClass.MovieDetail.newBuilder();
+    @Override
+    public void bookTicket(MovieOuterClass.BookTicketRequest request, StreamObserver<MovieOuterClass.BookTicketResponse> responseObserver) {
+        String id = request.getMovieId();
+        MovieOuterClass.BookTicketResponse.Builder bookTicketResponse = MovieOuterClass.BookTicketResponse.newBuilder();
+        MovieOuterClass.MovieDetail.Builder movieDetail = MovieOuterClass.MovieDetail.newBuilder();
 
-    responseObserver.onNext(bookTicketResponse.build());
-    responseObserver.onCompleted();
-  }
+        String genre = new String();
+        List<String> genre1 = new ArrayList<>();
+        genre1.add("RomCom");
+        String name = "";
+        String errTitle = "";
+        String errDescription = "";
+        String errImage = "";
+        String result = "";
+        Map detail;
+        try {
+            FileReader reader = new FileReader("/Users/shreyakishore/Documents/gRPC/src/main/movies/moviesDetails.json");
+//      FileReader reader = new FileReader("/Users/sahanaprasad/Desktop/movieRpc/src/main/movies/moviesDetails.json");
+            Object obj = jsonParser.parse(reader);
+            JSONObject movieList = (JSONObject) obj;
+
+            detail = ((Map) movieList.get(request.getMovieId().toString()));
+//      System.out.println("Movie name : "+detail.get("movieName"));
+
+
+            movieDetail.setDuration((String) detail.get("duration"))
+                    .setMovieId(request.getMovieId())
+                    .setRating(((Long) detail.get("rating")).intValue())
+                    .setYear(((Long) detail.get("year")).intValue())
+                    .setGenres((String) detail.get("genres"))
+                    .setStoryLine((String) detail.get("story_line"))
+                    .setPrice((String) detail.get("price"))
+                    .setMovieName((String) detail.get("movieName"))
+                    .setImageUrl((String) detail.get("image_url"));
+            name = (String) detail.get("movieName");
+            result = "Success";
+            bookTicketResponse.setBarCodeString(result).setMovieDetails(movieDetail);
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+            MovieOuterClass.ErroHandlingDetail.Builder errResponse = MovieOuterClass.ErroHandlingDetail.newBuilder();
+
+            errTitle = "NOT FOUND";
+            errDescription = "Movie ID does not exist";
+            errImage = "wertyui";
+            errResponse.setTitle(errTitle).setDescription(errDescription).setImageUrl(errImage);
+            result = "Failed";
+            bookTicketResponse.setBarCodeString(result).setErrorHandlingDetails(errResponse);
+
+        }
+
+        //MovieOuterClass.Gen.Builder movieDetail = MovieOuterClass.MovieDetail.newBuilder();
+
+        responseObserver.onNext(bookTicketResponse.build());
+        responseObserver.onCompleted();
+    }
 }
