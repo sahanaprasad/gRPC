@@ -37,7 +37,7 @@ public class MovieService extends MovieGrpc.MovieImplBase {
 
         for (int i = 1; i <= 5; i++) {
             try {
-                FileReader reader = new FileReader("/Users/shreyakishore/Documents/gRPC/src/main/movies/moviesDetails.json");
+                FileReader reader = new FileReader("src/main/movies/moviesDetails.json");
 //      FileReader reader = new FileReader("/Users/sahanaprasad/Desktop/movieRpc/src/main/movies/moviesDetails.json");
                 Object obj = jsonParser.parse(reader);
                 JSONObject movieList = (JSONObject) obj;
@@ -65,7 +65,7 @@ public class MovieService extends MovieGrpc.MovieImplBase {
 
         for (int i = 6; i <= 10; i++) {
             try {
-                FileReader reader = new FileReader("/Users/shreyakishore/Documents/gRPC/src/main/movies/moviesDetails.json");
+                FileReader reader = new FileReader("src/main/movies/moviesDetails.json");
 //      FileReader reader = new FileReader("/Users/sahanaprasad/Desktop/movieRpc/src/main/movies/moviesDetails.json");
                 Object obj = jsonParser.parse(reader);
                 JSONObject movieList = (JSONObject) obj;
@@ -93,7 +93,7 @@ public class MovieService extends MovieGrpc.MovieImplBase {
 
         for (int i = 11; i <= 15; i++) {
             try {
-                FileReader reader = new FileReader("/Users/shreyakishore/Documents/gRPC/src/main/movies/moviesDetails.json");
+                FileReader reader = new FileReader("src/main/movies/moviesDetails.json");
 //      FileReader reader = new FileReader("/Users/sahanaprasad/Desktop/movieRpc/src/main/movies/moviesDetails.json");
                 Object obj = jsonParser.parse(reader);
                 JSONObject movieList = (JSONObject) obj;
@@ -141,7 +141,7 @@ public class MovieService extends MovieGrpc.MovieImplBase {
         String result = "";
         Map detail;
         try {
-            FileReader reader = new FileReader("/Users/shreyakishore/Documents/gRPC/src/main/movies/moviesDetails.json");
+            FileReader reader = new FileReader("src/main/movies/moviesDetails.json");
 //      FileReader reader = new FileReader("/Users/sahanaprasad/Desktop/movieRpc/src/main/movies/moviesDetails.json");
             Object obj = jsonParser.parse(reader);
             JSONObject movieList = (JSONObject) obj;
